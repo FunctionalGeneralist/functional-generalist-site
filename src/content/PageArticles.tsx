@@ -12,7 +12,6 @@ export default function PageArticles() {
 
   useEffect(() => {
     setSidebarContent([<></>])
-    setSidebarIsCollapsed(true)
   }, [setSidebarContent, setSidebarIsCollapsed])
 
   return (

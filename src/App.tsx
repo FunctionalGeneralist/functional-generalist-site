@@ -17,13 +17,11 @@ import ProjectSimpleDmxController from "./content/ProjectSimpleDmxController"
 import Sidebar from "./components/Sidebar"
 import PageProjects from "./content/PageProjects"
 import ElementSpacer from "./components/ElementSpacer"
-import { calcAppColumnWidths, extractIntFromPx } from "./helpers/styleH"
 
 export default function App() {
   const [screenIsSmall, setScreenIsSmall] = useAtom(screenIsSmallAtom)
   const sidebarIsCollapsed = useAtomValue(sidebarIsCollapsedAtom)
 
-  const [appColTemplate, setAppColTemplate] = useState("6fr 20fr 6fr")
   const mediaWatcher = window.matchMedia(`(max-width: ${smallScreenWidth})`)
 
   // One time setup.
@@ -31,13 +29,8 @@ export default function App() {
     setScreenIsSmall(mediaWatcher.matches)
     mediaWatcher.addEventListener("change", (e: MediaQueryListEvent) => setScreenIsSmall(e.matches))
 
-    // TODO: Will change to all theme values, too sleepy rn.
-    let leftMarginMin = sidebarIsCollapsed ? 240 : 240
-    window.addEventListener("resize", () => setAppColTemplate(calcAppColumnWidths(window.innerWidth, 1920, 1170, leftMarginMin, 0, 0.7, 0.15, 0.15, extractIntFromPx(colGap))))
-
     return () => {
       mediaWatcher.removeEventListener("change", (e: MediaQueryListEvent) => setScreenIsSmall(e.matches))
-      window.removeEventListener("resize", () => setAppColTemplate(calcAppColumnWidths(window.innerWidth, 1920, 1170, leftMarginMin, 0, 0.7, 0.15, 0.15, extractIntFromPx(colGap))))
     }
   }, [screenIsSmall, mediaWatcher, setScreenIsSmall])
 
@@ -55,8 +48,9 @@ export default function App() {
     },
     pageContainer: {
       display: "grid",
+      columnGap: colGap,
       transition: "50ms",
-      gridTemplateColumns: screenIsSmall ? styleRules.screenIsSmallContentCols : appColTemplate,
+      gridTemplateColumns: screenIsSmall ? styleRules.screenIsSmallContentCols : styleRules.fullWidthContentCols,
       gridTemplateRows: "fit-content(80px) 1fr fit-content(80px)", // Header, then content, then footer.
       gridTemplateAreas:
         `

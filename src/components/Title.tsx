@@ -82,7 +82,7 @@ export default function Title(props: Props) {
     }}>
       <h5
         style={{
-          fontSize: "1.3vw", // This will be a theme value soon, this is very temporary.
+          fontSize: "1.3vw", // Will be theme value
           ...commonStyles.titles
         }}>
 

@@ -12,7 +12,6 @@ export default function PageProjects() {
 
   useEffect(() => {
     setSidebarContent([<></>])
-    setSidebarIsCollapsed(true)
   }, [setSidebarContent, setSidebarIsCollapsed])
 
   return (

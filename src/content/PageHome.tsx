@@ -18,7 +18,6 @@ export default function PageHome() {
   const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
 
   useEffect(() => {
-    setSidebarIsCollapsed(true)
     setSidebarContent([<></>])
   }, [setSidebarIsCollapsed, setSidebarContent])
 
@@ -54,7 +53,7 @@ export default function PageHome() {
           altDescription="An icon that looks like a document"
           enableDefaultHoverBehavior={true}
           limitMaskToText={true}
-          overlayText="Most Advice on Choosing A Career is Comically Bad"
+          overlayText={`Placeholder Article\nAbout Thing`}
           navigateLocation="/articles/given-bad-career-advice"
           padImage={true}/>
 

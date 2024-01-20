@@ -22,7 +22,7 @@ export default function ProjectSimpleDmxController() {
       <a target="_blank" rel="noreferrer" href="https://github.com/FunctionalGeneralist/simple-dmx-controller-arduino" style={{justifySelf: "left"}}>Microcontroller GitHub Repo</a>,
       <a target="_blank" rel="noreferrer" href="https://github.com/FunctionalGeneralist/simple-dmx-controller" style={{justifySelf: "left"}}>React Native App GitHub Repo</a>
     ])
-  }, [setSidebarIsCollapsed])
+  }, [setSidebarIsCollapsed, setSidebarContent])
 
   return (
     <Page
@@ -33,17 +33,16 @@ export default function ProjectSimpleDmxController() {
       addFollowingLine={true}>
       <TextBlockWithInlineElement
         colSizes={[1, 1]}
+        textBlocks={[
+          <p><span style={textBlockStarter}>This</span> was originally made back in 2020 when I was relatively new to programming, in hindsight it's amazing that I got all the way to completion because many parts were a true nightmare for a novice developer.</p>,
+          <p>I started this project to solve a problem at the school I taught at, namely that it was very annoying for both me and other staff to turn on the lights on stage. Professional lighting equipment isn't controlled by simple dimmer switchs, instead it's controlled by rather complicated dimmer switches, which are themselves controlled from a dedicated lighting controller like the popular ETC Ion you see pictured here.</p>
+        ]}
         inlineElement={
           <CardImage
             image={EtcIon}
             altDescription="a professional lighting controller, an ETC Ion"
             subtitleText="Functionally a $20,000 Windows 7 device with neato switches and a UI that's hardly advanced since the 80's" />
-        }
-        textBlocks={[
-          <p><span style={textBlockStarter}>Additional</span> information about this project, including links to GitHub pages for the Arduino and React Native code are in the sidebar on the left.</p>,
-          <p>I originally did this back in 2020 when I was relatively new to programming, in hindsight it's amazing that I got all the way to completion because many parts were a true nightmare to a novice developer.</p>,
-          <p>I started this project to solve a problem at the school I taught at, namely that it was very annoying for both me and other staff to turn on the lights on stage. Professional lighting equipment isn't controlled by simple dimmer switchs, instead it's controlled by rather complicated dimmer switches, which are themselves controlled from a dedicated lighting controller like the popular ETC Ion you see pictured here.</p>
-        ]} />
+        } />
 
       <TextBlock text={(<p>These controllers are bulky, <i>very</i> expensive, require some technical knowledge to use, and are typically located in the booth where the tech personnel control the show which is in the very back of the house (where the audience sits) and up a flight of stairs. Most venues, ours included, have a very simple controller onstage for daily use. Ours, however, was broken and funds for a replacement were nonexistent.</p>)} />
 
@@ -54,7 +53,7 @@ export default function ProjectSimpleDmxController() {
 
       <TextBlock
         titleText="Design"
-        text={(<p>Armed with this DMX-compatible microcontroller capable of communication over wifi and bluetooth, my phone, a few CS50 courses and way too much ambition, I began by laying out some broad design objectives.</p>)}
+        text={(<p>Armed with this microcontroller capable of communication over wifi and bluetooth, my phone, a few CS50 courses and way too much ambition, I began by laying out some broad design objectives.</p>)}
       />
       <ListBulletPoints
         textStrings={[
@@ -68,7 +67,7 @@ export default function ProjectSimpleDmxController() {
         altDescription="a microcontroller with a DMX hat"
         subtitleText="Enjoy this picture of the microcontroller in question, it breaks up visual monotony and ideally helps your brain stay engaged"
       />
-      <TextBlock text={<p>We can only control the intensity (level of brightness) of these older lighting instruments. The commands the user inputs to control the lights are pretty simple: specify a channel, which is an int between 1 and 512, and an intensity between 0 and 100. Large, computer controlled dimmers then adjust the amount of power sent to that channel (which here is essentially just a power circuit) and the attached light changes in intensity.</p>} />
+      <TextBlock text={<p>We can only control the intensity (level of brightness) of these older lighting instruments. The DMX commands the microcontroller will be issuing to control the lights are pretty simple: specify a channel, which is an int between 1 and 512, and an intensity between 0 and 100. Large, computer controlled dimmers then adjust the amount of power sent to that channel (which here is essentially just a power circuit) and the attached light changes in intensity.</p>} />
       <TextBlock text={<p>Precisely what the flow of the program would be would solidify as I worked on this, but here's how it ended up:</p>} />
       <ListBulletPoints
         textStrings={[
@@ -90,7 +89,6 @@ export default function ProjectSimpleDmxController() {
           <p>First roadblock: the CS50 course had the React Native app managed by Expo and Expo does not support BLE. In fact, public knowledge about using Bluetooth with React Native was strangely scarce, which I could hardly believe in the year of our lord 2020. I settle on one of the two libraries available, react-native-ble-plx, which is fully documented but examples are few and it's clearly written for mobile developers, not casual schlubs like me. Getting this library to do what I wanted was excrutiating and by far the most annoying and time consuming part of the project.</p>,
           <p>Second roadblock: getting the microcontroller to also communicate in Bluetooth and serve as a RESTful API. Counterintuitively, this was easier than React Native was but still an annoying process.</p>,
           <p>Third roadblock: saving an object to the microcontrollers memory. This completely blindsided me as I had foolishly assumed that I could simply save an object to memory. I didn't know about serializing objects and couldn't find the right terms to google to discover serializing, so I came up with my own solution: Process the object into a formatted string to save and reinflating the object using the string on load. Or put more concisely, serialization and deserialization. I'm actually a little proud that I came up with an identical solution to what's already used.</p>,
-          <p>Fourth roadblock: the cumulation of all the miscellaneous technical problems completely unrelated to making the programs, mostly stemmed by bugginess with React Native and phone emulators, React Native's "hot reload" feature, and everything to do with iOS. Just getting the damn app onto the iOS app store was a convoluted slog.</p>
         ]}
         inlineElement={
           <CardImage
@@ -99,6 +97,8 @@ export default function ProjectSimpleDmxController() {
             subtitleText="Here's a very low res image of the control screen that I pulled from its Google Play listing, I'll maybe eventually get a fresh one." />
         }
       />
+
+      <TextBlock text={(<p>Fourth roadblock: the cumulation of all the miscellaneous technical problems completely unrelated to making the programs, mostly stemmed by bugginess with React Native and phone emulators, React Native's "hot reload" feature, and everything to do with iOS. Just getting the damn app onto the iOS app store was a convoluted slog.</p>)} />
 
       <TextBlock
         titleText="One Year Later"
