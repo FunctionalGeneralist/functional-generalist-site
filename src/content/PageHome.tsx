@@ -10,11 +10,10 @@ import CardImage from "../components/CardImage"
 import SimpleDmxController from "../assets/simple-dmx-controller-arduino-beauty-shot.jpg"
 import {useEffect} from "react"
 import Documents from "../assets/documents.svg"
-import EtcIon from "../assets/etc-ion.jpg"
+import DndTable from "../assets/dnd-table-overall.jpg"
 
 export default function PageHome() {
   const screenIsSmall = useAtomValue(screenIsSmallAtom)
-  const [sidebarIsHidden, setSidebarIsHidden] = useAtom(sidebarIsHiddenAtom)
   const [sidebarIsCollapsed, setSidebarIsCollapsed] = useAtom(sidebarIsCollapsedAtom)
   const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
 
@@ -60,13 +59,12 @@ export default function PageHome() {
           padImage={true}/>
 
         <CardImage
-          image={Documents}
+          image={DndTable}
           altDescription="An icon that looks like a document"
           limitMaskToText={true}
           enableDefaultHoverBehavior={true}
           overlayText="Placeholder Project"
-          navigateLocation="/articles/given-bad-career-advice"
-          padImage={true} />
+          navigateLocation="/projects/none" />
 
         <CardImage
           image={Documents}

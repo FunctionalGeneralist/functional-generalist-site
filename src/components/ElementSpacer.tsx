@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import {baseGap, colGap, largeColGap, largeRowGap, rowGap, smallColGap, smallRowGap, tinyColGap, tinyRowGap } from "../style/styles";
 import { spacerSizes } from "../style/theme";
-import { ContainerProps } from "../types/CommonProps";
+import { ContainerProps, InteractableProps } from "../types/CommonProps";
 import ContainerGrid from "./ContainerGrid";
 
-interface Props extends ContainerProps {
+interface Props extends ContainerProps, InteractableProps {
   // Defaults to medium. "Nothing" lets the containers gap size handle it, not commonly used.
   size?: "nothing" | "tiny" | "small" | "medium" | "large" | "xLarge" 
   isHoz?: boolean // Gaps vertical by default.
@@ -71,6 +71,8 @@ export default function ElementSpacer(props: Props) {
       gridColumnEnd={props.gridColumnEnd}
       gridRowStart={props.gridRowStart}
       gridRowEnd={props.gridRowEnd}
+      clickHandler={props.clickHandler}
+      reference={props.reference}
     >
       
     </ContainerGrid>

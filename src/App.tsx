@@ -5,10 +5,10 @@ import './index.scss'
 import Header from "./components/Header"
 import HomePage from "./content/PageHome"
 import PageNotFound from "./content/PageNotFound"
-import {colGap, rowGap, smallScreenWidth, styleRules} from "./style/styles"
-import {useAtom} from "jotai"
-import {screenIsSmallAtom} from "./atoms"
-import {useEffect} from "react"
+import {colGap, rowGap, smallColGap, smallScreenWidth, styleRules} from "./style/styles"
+import {useAtom, useAtomValue} from "jotai"
+import {screenIsSmallAtom, sidebarIsCollapsedAtom} from "./atoms"
+import {useEffect, useRef, useState} from "react"
 import ArticleGeneralistsInSpecializedWorld from "./content/ArticleGeneralists"
 import PageArticles from "./content/PageArticles"
 import ContainerGrid from "./components/ContainerGrid"
@@ -17,29 +17,35 @@ import ProjectSimpleDmxController from "./content/ProjectSimpleDmxController"
 import Sidebar from "./components/Sidebar"
 import PageProjects from "./content/PageProjects"
 import ElementSpacer from "./components/ElementSpacer"
+import { calcAppColumnWidths, extractIntFromPx } from "./helpers/styleH"
 
 export default function App() {
   const [screenIsSmall, setScreenIsSmall] = useAtom(screenIsSmallAtom)
+  const sidebarIsCollapsed = useAtomValue(sidebarIsCollapsedAtom)
 
+  const [appColTemplate, setAppColTemplate] = useState("6fr 20fr 6fr")
   const mediaWatcher = window.matchMedia(`(max-width: ${smallScreenWidth})`)
-
-  // Only here so I can insert actions on this.
-  function mediaChangeHandler(e: MediaQueryListEvent) {
-    setScreenIsSmall(e.matches)
-    console.log(e.matches)
-  }
 
   // One time setup.
   useEffect(() => {
     setScreenIsSmall(mediaWatcher.matches)
-    mediaWatcher.addEventListener("change", (e: MediaQueryListEvent) => mediaChangeHandler(e))
-  }, [])
+    mediaWatcher.addEventListener("change", (e: MediaQueryListEvent) => setScreenIsSmall(e.matches))
+
+    // TODO: Will change to all theme values, too sleepy rn.
+    let leftMarginMin = sidebarIsCollapsed ? 240 : 240
+    window.addEventListener("resize", () => setAppColTemplate(calcAppColumnWidths(window.innerWidth, 1920, 1170, leftMarginMin, 0, 0.7, 0.15, 0.15, extractIntFromPx(colGap))))
+
+    return () => {
+      mediaWatcher.removeEventListener("change", (e: MediaQueryListEvent) => setScreenIsSmall(e.matches))
+      window.removeEventListener("resize", () => setAppColTemplate(calcAppColumnWidths(window.innerWidth, 1920, 1170, leftMarginMin, 0, 0.7, 0.15, 0.15, extractIntFromPx(colGap))))
+    }
+  }, [screenIsSmall, mediaWatcher, setScreenIsSmall])
 
   const styles: StyleSheetCSS = {
     appContainer: {
-      width: "100%",
-      height: "100%",
-      minHeight: "100%",
+      width: "100vw",
+      height: "100vh",
+      minHeight: "100vh",
       lineHeight: "normal",
       display: "grid",
       gridTemplateColumns: '1fr',
@@ -49,7 +55,8 @@ export default function App() {
     },
     pageContainer: {
       display: "grid",
-      gridTemplateColumns: screenIsSmall ? styleRules.screenIsSmallContentCols : styleRules.fullWidthContentCols,
+      transition: "50ms",
+      gridTemplateColumns: screenIsSmall ? styleRules.screenIsSmallContentCols : appColTemplate,
       gridTemplateRows: "fit-content(80px) 1fr fit-content(80px)", // Header, then content, then footer.
       gridTemplateAreas:
         `
@@ -57,7 +64,6 @@ export default function App() {
       "${setGridAreas.appSidebar} ${setGridAreas.appContent} ${setGridAreas.empty}"
       "${setGridAreas.appFooter} ${setGridAreas.appFooter} ${setGridAreas.appFooter}"
       `,
-      columnGap: colGap,
       width: "100%",
       height: "100%",
       minHeight: "100%"
