@@ -1,0 +1,109 @@
+// This should be used only when necessary, otherwise styling almost entirely done in components.
+
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+#root, #root > div {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+#app, #app > div {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+// This stuff makes the line height pixel perfect, used for labels and h1 currently.
+@function calculateTypeOffset($lh, $fontSize, $descenderHeightScale) {
+    $lineHeightScale: $lh / $fontSize;
+    @return ($lineHeightScale - 1) / 2 + $descenderHeightScale;
+}
+
+@mixin basekick($typeSizeModifier, $baseFontSize, $descenderHeightScale, $typeRowSpan, $gridRowHeight, $capHeight, $xTranslate) {
+  $fontSize: $typeSizeModifier * $baseFontSize;
+  $lineHeight: $typeRowSpan * $gridRowHeight;
+  $typeOffset: calculateTypeOffset($lineHeight, $fontSize, $descenderHeightScale);
+  $topSpace: $lineHeight - $capHeight * $fontSize;
+  $heightCorrection: 0;
+
+  @if $topSpace > $gridRowHeight {
+    $heightCorrection: $topSpace - ($topSpace % $gridRowHeight);
+  }
+
+  $preventCollapse: 1;
+
+  font-size: #{$fontSize}px;
+  line-height: #{$lineHeight}px;
+  transform: translate($xTranslate, #{$typeOffset}em);
+  padding-top: $preventCollapse;
+
+
+  &::before {
+    content: "";
+    margin-top: #{-($heightCorrection + $preventCollapse)}px;
+    display: block;
+    height: 0;
+  }
+}
+
+h1 {
+    @include basekick(3, 16, -0.15, 3, 16, .70, -3px);
+    margin: 0;
+}
+
+h3 {
+  @include basekick(3, 16, -0.01, 1, 20, .70, 0px);
+  margin: 0;
+}
+
+h4 {
+    margin: 0;
+}
+
+h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: #dedede;
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+label {
+  @include basekick(1, 16, -0.05, 1, 16, 0.75, 0);
+  margin: 0;
+}
+
+a {
+  color: #0096ff;
+}
+
