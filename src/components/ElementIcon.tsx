@@ -55,7 +55,8 @@ export default function ElementIcon(props: Props) {
       onClick={(e) => clickHandler(e)}
     >
       <img
-        src={(isHovered && props.difIconOnHover !== null) ? props.difIconOnHover : props.image}
+        src={(isHovered && props.difIconOnHover !== undefined) ? props.difIconOnHover : props.image}
+        title=""
         alt={props.alt}
         style={{...handleIconSize()}}
       />

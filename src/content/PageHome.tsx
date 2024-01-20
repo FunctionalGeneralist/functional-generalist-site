@@ -55,7 +55,7 @@ export default function PageHome() {
           altDescription="An icon that looks like a document"
           enableDefaultHoverBehavior={true}
           limitMaskToText={true}
-          overlayText="Most Advice on Selecting A Career is Comically Bad"
+          overlayText="Most Advice on Choosing A Career is Comically Bad"
           navigateLocation="/articles/given-bad-career-advice"
           padImage={true}/>
 

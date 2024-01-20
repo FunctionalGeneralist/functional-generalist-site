@@ -89,12 +89,12 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
 
-            <Route path="/articles" element={<PageArticles />} />
-            <Route path="/articles/generalist" element={<ArticleGeneralistsInSpecializedWorld />} />
-
             <Route path="/projects" element={<PageProjects />} />
-            <Route path="/projects/simple-dmx-controller" element={<ProjectSimpleDmxController /> } />
-            <Route path="/projects/dnd-table" element={<ProjectDndTable /> } />
+            <Route path="/projects/simple-dmx-controller" element={<ProjectSimpleDmxController />} />
+            <Route path="/projects/dnd-table" element={<ProjectDndTable />} />
+
+            <Route path="/articles" element={<PageArticles />} />
+            <Route path="/articles/given-bad-career-advice" element={<ArticleGeneralistsInSpecializedWorld />} />
 
             <Route path="*" element={<PageNotFound />} />
 

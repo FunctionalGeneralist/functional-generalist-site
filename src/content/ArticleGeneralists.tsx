@@ -7,12 +7,10 @@ import { textBlockStarter } from "../style/commonStyles"
 import TextBlockWithInlineElement from "../components/TextBlockWithInlineElement"
 import { useEffect } from "react"
 
-export default function ArticleGeneralistsInSpecializedWorld() {
-  const screenIsSmall = useAtomValue(screenIsSmallAtom)
-
+export default function ArticleBadCareerAdvice() {
   return (
     <Page
-      titleText="95% of Advice on Choosing a Career is Bad and It's Not Too Late to Change Course"
+      titleText="Most Advice On Choosing a Career Is Comically Bad and It's Not Too Late to Change Course"
       subtitleText="Only here for showing to a few people before I launch"
       additionalSubtitleText="Published 2024/01/17"
       italicizeAddSubtitle={true}
