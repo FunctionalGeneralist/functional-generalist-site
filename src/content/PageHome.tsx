@@ -38,7 +38,7 @@ export default function PageHome() {
           image={SimpleDmxController}
           altDescription="A microcontroller with a DMX expansion board"
           enableDefaultHoverBehavior={true}
-          overlayText="DMX512 Controller and BLE App"
+          overlayText={"DMX Controller with\nReact App"}
           limitMaskToText={true}
           navigateLocation="/projects/simple-dmx-controller" />
 
@@ -46,7 +46,7 @@ export default function PageHome() {
           image={StringCheeseLogo}
           altDescription="The logo for the String Cheese Theory podcast, which is a piece of frayed string cheese in front of a brain and an atom, jokingly implying maximum brain power is found here"
           enableDefaultHoverBehavior={true}
-          overlayText="Comedy Podcast I'm a Host On"
+          overlayText={`Comedy Podcast\nI'm a Host On`}
           limitMaskToText={true}
           externalLink="https://www.stringcheesepodcast.com/"/>
 
@@ -54,7 +54,8 @@ export default function PageHome() {
           image={Documents}
           altDescription="An icon that looks like a document"
           enableDefaultHoverBehavior={true}
-          overlayText="You Were Probably Given Awful Advice on Choosing a Career But It's Not Too Late To Change"
+          limitMaskToText={true}
+          overlayText="Most Advice on Selecting A Career is Comically Bad"
           navigateLocation="/articles/given-bad-career-advice"
           padImage={true}/>
 

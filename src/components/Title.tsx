@@ -5,7 +5,7 @@ import TitleSub from "../components/TitleSub"
 import {styleRules, tinyRowGap} from "../style/styles"
 import {ReactNode, useEffect, useState} from "react"
 import Line from "./Line"
-import { AnimationProps } from "../types/CommonProps"
+import {AnimationProps} from "../types/CommonProps"
 
 export interface TitleProps {
   elementIsVisible?: boolean // Value of false turns opacity to 0, otherwise 100.
@@ -77,16 +77,19 @@ export default function Title(props: Props) {
   )
 
   const imageOverlayTitle = (
-    <h5
-      style={{
-        fontSize: fontSizes.large,
-        height: "min-content",
-        ...commonStyles.titles
-      }}>
+    <div style={{
+      whiteSpace: "pre-wrap",
+    }}>
+      <h5
+        style={{
+          fontSize: "1.3vw", // This will be a theme value soon, this is very temporary.
+          ...commonStyles.titles
+        }}>
 
-      {props.titleText}
+        {props.titleText}
 
-    </h5>
+      </h5>
+    </div>
   )
 
   const smallTitle = (

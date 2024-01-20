@@ -43,12 +43,15 @@ export default function CardImage(props: Props) {
     <ContainerGrid
       gridRowStart={1}
       gridColumnStart={1}
-      isMinContentHigh={props.limitMaskToText ? true : false}
+      maxHeight={props.limitMaskToText ? "35%" : undefined}
       alignSelf={props.limitMaskToText ? "start" : undefined}
       backgroundColor={isHovered ? colors.containers.transparentMaskHovered : colors.containers.transparentMask}
       zIndex={styleRules.zIndexes.imageOverlay}
       cursor="pointer">
-      <ContainerGrid padding={styleRules.internalPadding} cursor="pointer" alignItems="center">
+      <ContainerGrid
+        padding={styleRules.internalPadding}
+        cursor="pointer"
+        alignItems="center">
         <Title
           titleText={props.overlayText}
           titleType="imageOverlay"
