@@ -14,9 +14,10 @@ interface Props extends ContainerProps, InteractableProps, AnimationProps {
   gridColumnEnd?: number
   gridRowEnd?: number
 
-  // A number gives that number of columns, all 1fr, and arr gives arr.length amount of cols with fr widths. So [1, 3, 4] gives you "1fr 3fr 4fr"
+  // A number gives that number of columns, all 1fr, and arr gives arr.length amount 
+  // of cols with fr widths.So[1, 3, 4] gives you "1fr 3fr 4fr"
   numCols?: CommonProps["numCols"]
-  gridColTemplateOverride?: string // To be rarely used, overrides the numCols feature for a regular CSS gridColumnTemplate value.
+  gridColTemplateOverride?: string // To be rarely used, overrides several useful props.
   numRows?: number
 
   colStyle?: 'fixed' | 'min' | 'fit' | undefined

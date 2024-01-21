@@ -34,7 +34,7 @@ export const colors = {
     primary: `rgb(${gradients.black[1]})`,
     secondary: `rgb(${gradients.black[3]})`,
     nav: `rgb(${gradients.black[1]})`,
-    transparentMask: `rgba(${gradients.black[4]}, 0.75)`,
+    transparentMask: `rgba(${gradients.black[4]}, 0.65)`,
     transparentMaskHovered: `rgba(${gradients.black[4]}, 0.95)`,
   },
   highlight: {

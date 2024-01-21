@@ -18,7 +18,8 @@ export default function PageHome() {
   const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
 
   useEffect(() => {
-    setSidebarContent([<></>])
+    setSidebarIsCollapsed(false)
+    setSidebarContent([<a href="https://github.com/FunctionalGeneralist/functional-generalist-site" target="_blank" rel="noreferrer">This sites GitHub repo</a>])
   }, [setSidebarIsCollapsed, setSidebarContent])
 
   return (
@@ -37,7 +38,6 @@ export default function PageHome() {
           altDescription="A microcontroller with a DMX expansion board"
           enableDefaultHoverBehavior={true}
           overlayText={"DMX Controller with\nReact App"}
-          limitMaskToText={true}
           navigateLocation="/projects/simple-dmx-controller" />
 
         <CardImage
@@ -45,14 +45,12 @@ export default function PageHome() {
           altDescription="The logo for the String Cheese Theory podcast, which is a piece of frayed string cheese in front of a brain and an atom, jokingly implying maximum brain power is found here"
           enableDefaultHoverBehavior={true}
           overlayText={`Comedy Podcast\nI'm a Host On`}
-          limitMaskToText={true}
           externalLink="https://www.stringcheesepodcast.com/"/>
 
         <CardImage
           image={Documents}
           altDescription="An icon that looks like a document"
           enableDefaultHoverBehavior={true}
-          limitMaskToText={true}
           overlayText={`Placeholder Article\nAbout Thing`}
           navigateLocation="/articles/given-bad-career-advice"
           padImage={true}/>
@@ -60,7 +58,6 @@ export default function PageHome() {
         <CardImage
           image={DndTable}
           altDescription="An icon that looks like a document"
-          limitMaskToText={true}
           enableDefaultHoverBehavior={true}
           overlayText="Placeholder Project"
           navigateLocation="/projects/none" />
@@ -71,7 +68,6 @@ export default function PageHome() {
           enableDefaultHoverBehavior={true}
           overlayText={`Placeholder Article`}
           navigateLocation="/articles/given-bad-career-advice"
-          limitMaskToText={true}
           padImage={true}/>
 
         <CardImage
@@ -80,7 +76,6 @@ export default function PageHome() {
           enableDefaultHoverBehavior={true}
           overlayText="Another Placeholder"
           navigateLocation="/articles/given-bad-career-advice"
-          limitMaskToText={true}
           padImage={true} />
 
       </ContainerGrid>

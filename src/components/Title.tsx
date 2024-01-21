@@ -3,9 +3,11 @@ import {durations, fontSizes} from "../style/theme"
 import StyleSheetCSS from "../types/Style"
 import TitleSub from "../components/TitleSub"
 import {styleRules, tinyRowGap} from "../style/styles"
-import {ReactNode, useEffect, useState} from "react"
+import {ReactElement, ReactNode, useEffect, useState} from "react"
 import Line from "./Line"
 import {AnimationProps} from "../types/CommonProps"
+import { useAtomValue } from "jotai"
+import { screenIsSmallAtom } from "../atoms"
 
 export interface TitleProps {
   elementIsVisible?: boolean // Value of false turns opacity to 0, otherwise 100.
@@ -31,6 +33,9 @@ interface Props extends TitleProps, AnimationProps {
 }
 
 export default function Title(props: Props) {
+  const screenIsSmall = useAtomValue(screenIsSmallAtom)
+  const [titleElement, setTitleElement] = useState<ReactElement | null>(null)
+
   const commonStyles: StyleSheetCSS = {
     titles: {
       textAlign: props.justifyTitle,
@@ -39,75 +44,73 @@ export default function Title(props: Props) {
     }
   }
 
-  const siteTitle = (
-    <h1
-      style={{
-        height: "min-content",
-        ...commonStyles.titles
+  useEffect(() => {
+    const siteTitle = (
+      <h1
+        style={{
+          height: "min-content",
+          ...commonStyles.titles
+        }}>
+
+        {props.titleText}
+
+      </h1>
+    )
+
+    const pageTitle = (
+      <h1
+        style={{
+          height: "min-content",
+          ...commonStyles.titles
+        }}>
+
+        {props.titleText}
+
+      </h1>
+    )
+
+    const cardTitle = (
+      <h4
+        style={{
+          fontSize: fontSizes.large,
+          height: "min-content",
+          ...commonStyles.titles
+        }}>
+
+        {props.titleText}
+
+      </h4>
+    )
+
+    const imageOverlayTitle = (
+      <div style={{
+        whiteSpace: "pre-wrap",
       }}>
+        <h5
+          style={{
+            fontSize: screenIsSmall ? fontSizes.large : "1.3vw", // Will be theme value
+            ...commonStyles.titles
+          }}>
 
-      {props.titleText}
+          {props.titleText}
 
-    </h1>
-  )
+        </h5>
+      </div>
+    )
 
-  const pageTitle = (
-    <h1
-      style={{
-        height: "min-content",
-        ...commonStyles.titles
-      }}>
-
-      {props.titleText}
-
-    </h1>
-  )
-
-  const cardTitle = (
-    <h4
-      style={{
-        fontSize: fontSizes.large,
-        height: "min-content",
-        ...commonStyles.titles
-      }}>
-
-      {props.titleText}
-
-    </h4>
-  )
-
-  const imageOverlayTitle = (
-    <div style={{
-      whiteSpace: "pre-wrap",
-    }}>
+    const smallTitle = (
       <h5
         style={{
-          fontSize: "1.3vw", // Will be theme value
+          fontSize: fontSizes.mediumLarge,
+          height: "min-content",
           ...commonStyles.titles
         }}>
 
         {props.titleText}
 
       </h5>
-    </div>
-  )
+    )
 
-  const smallTitle = (
-    <h5
-      style={{
-        fontSize: fontSizes.mediumLarge,
-        height: "min-content",
-        ...commonStyles.titles
-      }}>
-
-      {props.titleText}
-
-    </h5>
-  )
-
-  const [titleElement, setTitleElement] = useState(pageTitle)
-
-  useEffect(() => {
     switch (props.titleType) {
       case "site":
         setTitleElement(siteTitle)
@@ -127,7 +130,7 @@ export default function Title(props: Props) {
       default:
         setTitleElement(pageTitle)
     }
-  }, [props.titleType])
+  }, [props.titleType, screenIsSmall, commonStyles.titles, props.titleText])
 
   return (
     <ContainerGrid

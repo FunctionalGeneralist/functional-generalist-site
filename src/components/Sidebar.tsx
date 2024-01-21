@@ -64,7 +64,7 @@ export default function Sidebar() {
         transitionDur={150}>
         <ContainerGrid
           numCols={1}
-          justifyItems="right"
+          justifyItems="left"
           rowStyle="min"
           alignContent="start"
           rowGap={smallRowGap}

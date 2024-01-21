@@ -1,10 +1,5 @@
 import React, { MutableRefObject } from "react"
 
-// These are prop values common across components, mostly for the convention of it.
-export interface CommonPropValues {
-  size: "tiny" | "small" | "medium" | "large" | "xLarge"
-}
-
 export interface InteractableProps {
   highlightOnHover?: false
   enableDefaultHoverBehavior?: true
@@ -16,6 +11,11 @@ export interface InteractableProps {
   clickHandler?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void
   hoverHandler?: (e: React.MouseEvent<HTMLElement, MouseEvent>, isBeingHovered: boolean) => void
   cleanupFunc?: () => void
+}
+
+// These are prop values common across components, here so change is only in one place.
+export interface CommonPropValues {
+  size: "tiny" | "small" | "medium" | "large" | "xLarge"
 }
 
 export interface ContainerProps {
@@ -66,6 +66,7 @@ export interface AnimationProps {
   transitionDur?: number
 }
 
+// Deprecated, will be removed.
 export interface CommonProps {
   numCols?: number | number[]
 }

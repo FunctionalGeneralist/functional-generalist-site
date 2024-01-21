@@ -4,43 +4,6 @@ import {CSSProperties} from "react"
 import {styleRules, lineStyles, smallColGap} from "../style/styles"
 import { colors, hardSizes } from "../style/theme"
 
-// This function makes some grid columns collapse first on window resizing. Used to make the "margin"
-// columns on either side of the sites content collapse first before content begins to resize. Right column collapses first.
-export function calcAppColumnWidths(
-  windowWidth: number,
-  bigWindowBreakpoint: number, // If window bigger than this (in px), goes to "default" widths as determined by ratios below.
-  desiredContentWidth: number, // The width, in px, that the content column should remain at until all margin space is gone.
-  leftMinWidth: number, // Minimum width (in px) of any content in the "margin" columns, column will not go smaller than this value.
-  rightMinWidth: number,
-  contentRatio: number, // The percentage the column takes on a "full width" screen, 1920px or larger.
-  leftMarginRatio: number, // The percentage the margin column takes on a "full width" screen, 1920px or larger.
-  rightMarginRatio: number,
-  remainingMargin: number // This margin will remain after a margin column has resized to as small as its minWidth will allow.
-) {
-  let fullContentWidth = windowWidth * contentRatio
-  let fullLeftWidth = windowWidth * leftMarginRatio
-  let fullRightWidth = windowWidth * rightMarginRatio
-
-  if (windowWidth >= bigWindowBreakpoint)
-    return `${fullLeftWidth}px ${fullContentWidth}px ${fullRightWidth}px`
-
-  // If margins can no longer collapse, begin collapsing content.
-  else if (windowWidth < (desiredContentWidth + leftMinWidth + rightMinWidth))
-    return `${leftMinWidth + remainingMargin}px 1fr ${rightMinWidth + remainingMargin}px`
-
-  else if (windowWidth > (desiredContentWidth + leftMinWidth))
-    return `minmax(${leftMinWidth + remainingMargin}px, ${windowWidth * (leftMarginRatio + rightMarginRatio)}px) ${desiredContentWidth}px ${(windowWidth - (fullLeftWidth + desiredContentWidth) + remainingMargin)}px`
-
-  else if (windowWidth - (leftMinWidth + desiredContentWidth) <= rightMinWidth)
-    return `${windowWidth - (desiredContentWidth + rightMinWidth)}px ${desiredContentWidth}px ${rightMinWidth + remainingMargin}px`
-
-  else {
-    console.log("???")
-    return "6fr 20fr 6fr"
-  }
-}
-
-// Functions that take component props and give back CSS to simplify CSS and props that devs do.
 export const buildStyles = {
   // Generate different common types of grid container column types.
   gridColTemplateAndColGap: function (
@@ -72,7 +35,7 @@ export const buildStyles = {
       colSize = "1fr"
     }
 
-    // colTemplate takes higher precendence than numCols, so numCols done first. numCols defaults to number of children in container.
+    // colTemplate takes higher precendence than numCols, so numCols done first.
     let layout = ` ${colSize}`
     if (linesBetweenColumns) {
       layout = ` ${colSize} min-content`
@@ -91,6 +54,7 @@ export const buildStyles = {
 
     let gridTemplateCols = ""
     for (let i = 0; i < numContentCols; i++) {
+      // Don't put a line at the end, only in between.
       if (i === numContentCols - 1 && !!linesBetweenColumns) {
         gridTemplateCols += ` ${colSize}`
       }
