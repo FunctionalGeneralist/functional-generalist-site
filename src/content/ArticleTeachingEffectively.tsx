@@ -18,7 +18,7 @@ export default function ArticleTeachingEffectively() {
   return (
     <Page
       titleText={articleTeachingEffectivelyTitle}
-      subtitleText="How to manipulate people so they enjoy learning"
+      subtitleText="How to manipulate people into enjoying learning"
       additionalSubtitleText="Published 2024/01/21"
       italicizeAddSubtitle={true}
       addFollowingLine={true}>
@@ -27,9 +27,9 @@ export default function ArticleTeachingEffectively() {
 
       <TextBlock
         titleText="Psychology and Patience, Patience, Patience"
-        text={(<p>Being a student puts 95% of people into a guarded, more introverted state. Nobody likes to feel stupid or be perceived as such and that goes triple for adults in a professional setting. What's more, your student(s) are likely young and inexperienced and as such likely unconfident in themselves and their abilities.</p>)}
+        text={(<p>Being a student puts 95% of people into a guarded, more introverted state. Nobody likes to feel stupid or be perceived as such and that goes triple for adults in a professional setting. What's more, your student(s) are probably young and inexperienced and as such likely unconfident in themselves and their abilities.</p>)}
       />      
-      <TextBlock text={(<p>A student like this will rarely, if ever, prompt you for clarification on something they don't understand or respond affirmatively when you ask something like "Do you have any questions?"/"Anyone have any questions?". This is terrible because even mildly complicated concepts don't sink in until they've been explained two or three different times and practically used, and even then odds are decent more practical use is needed to really cement it.</p>)} />
+      <TextBlock text={(<p>A student like this will rarely, if ever, prompt you for clarification on something they don't understand or respond affirmatively when you ask something like "Do you have any questions?" / "Anyone have any questions?". This is terrible because even mildly complicated concepts don't sink in until they've been explained two or three different times and practically used, and even then odds are decent more practical use is needed to really cement it.</p>)} />
       <TextBlock text={(<p>So your first objective, which you'll be working towards the entire time you're this students teacher, is making them comfortable around you and trust that you will never make them feel stupid or privately see them as such. Make a real effort to be friendly and most critically, never display the slightest hint of annoyance, impatience or anger, not even with issues unrelated to your students while you're in their presence.</p>)} />
       <TextBlock text={(<p>If it's aimed at them you're dealing a killing blow to their confidence, you're telling them they're stupid, do it enough times and they'll either disengage entirely or come to resent you, but probably both. I say to avoid it even when it's not directed at them because just knowing you're capable of that reaction makes their brains subconsciously dread that it'll be aimed at them if they mess up.</p>)} />
       <TextBlock text={(<p>Here are some active ways to gain their trust and build their confidence while you're not accidentally cratering it:</p>)}/>
@@ -46,7 +46,7 @@ export default function ArticleTeachingEffectively() {
       />
       <TextBlock text={(<p>Bringing up every last good aspect <u>honestly, never condescendingly making something up</u>, also signals you're dilligently looking through the entirety of their effort and as such give a shit, which matters because of the following:</p>)} />
       <TextBlock text={(<p>This practice of honestly and thorough analysis of their work has a critical effect if you're able to get your students confident, trusting and ideally liking you, which is that they'll want to impress you. Receiving praise and recognition feels good to anyone, but getting it on all the aspects you worked hard on, from a person whose knowledge on the topic you respect and you know is truthful, is crack-cocaine to the human brain.</p>)} />
-      <TextBlock text={(<p>To receive this addictive praise, students become highly engaged in learning and will start asking questions or for help of their own accord, which they're no longer scared of doing. When a student prompts you with a startlingly insightful question you'll know you've won, congrats on accomplishing something unfortunately few teachers know how to.</p>)} />
+      <TextBlock text={(<p>To receive this addictive praise, students become highly engaged in learning and will start asking questions or for help of their own accord, which they're no longer scared of doing, and the work they turn in will be high effort. When a student prompts you with a startlingly insightful question you'll know you've won, congrats on accomplishing something unfortunately few teachers know how to.</p>)} />
 
     </Page>
   )
