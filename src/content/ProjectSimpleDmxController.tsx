@@ -1,6 +1,6 @@
-import {useAtom, useAtomValue} from "jotai"
+import {useAtom} from "jotai"
 import {useEffect} from "react"
-import {screenIsSmallAtom, sideBarContentAtom, sidebarIsCollapsedAtom, sidebarIsHiddenAtom} from "../atoms"
+import {sideBarContentAtom, sidebarIsCollapsedAtom} from "../atoms"
 import Page from "../components/Page"
 import TextBlock from "../components/TextBlock"
 import {textBlockStarter} from "../style/commonStyles"
@@ -11,8 +11,9 @@ import TextBlockWithInlineElement from "../components/TextBlockWithInlineElement
 import ListBulletPoints from "../components/ListBulletPoints"
 import ControlScreen from "../assets/control-screen.png"
 
+export const simpleDmxControllerTitle = "DMX512 Controller with\n React Native App"
+
 export default function ProjectSimpleDmxController() {
-  const screenIsSmall = useAtomValue(screenIsSmallAtom)
   const [sidebarIsCollapsed, setSidebarIsCollapsed] = useAtom(sidebarIsCollapsedAtom)
   const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
 
@@ -89,6 +90,7 @@ export default function ProjectSimpleDmxController() {
           <p>First roadblock: the CS50 course had the React Native app managed by Expo and Expo does not support BLE. In fact, public knowledge about using Bluetooth with React Native was strangely scarce, which I could hardly believe in the year of our lord 2020. I settle on one of the two libraries available, react-native-ble-plx, which is fully documented but examples are few and it's clearly written for mobile developers, not casual schlubs like me. Getting this library to do what I wanted was excrutiating and by far the most annoying and time consuming part of the project.</p>,
           <p>Second roadblock: getting the microcontroller to also communicate in Bluetooth and serve as a RESTful API. Counterintuitively, this was easier than React Native was but still an annoying process.</p>,
           <p>Third roadblock: saving an object to the microcontrollers memory. This completely blindsided me as I had foolishly assumed that I could simply save an object to memory. I didn't know about serializing objects and couldn't find the right terms to google to discover serializing, so I came up with my own solution: Process the object into a formatted string to save and reinflating the object using the string on load. Or put more concisely, serialization and deserialization. I'm actually a little proud that I came up with an identical solution to what's already used.</p>,
+          <p>Fourth roadblock: the cumulation of all the miscellaneous technical problems completely unrelated to making the programs, mostly stemmed by bugginess with React Native and phone emulators, React Native's "hot reload" feature, and everything to do with iOS. Just getting the damn app onto the iOS app store was a convoluted slog.</p>,
         ]}
         inlineElement={
           <CardImage
@@ -97,8 +99,6 @@ export default function ProjectSimpleDmxController() {
             subtitleText="Here's a very low res image of the control screen that I pulled from its Google Play listing, I'll maybe eventually get a fresh one." />
         }
       />
-
-      <TextBlock text={(<p>Fourth roadblock: the cumulation of all the miscellaneous technical problems completely unrelated to making the programs, mostly stemmed by bugginess with React Native and phone emulators, React Native's "hot reload" feature, and everything to do with iOS. Just getting the damn app onto the iOS app store was a convoluted slog.</p>)} />
 
       <TextBlock
         titleText="One Year Later"

@@ -9,7 +9,8 @@ const standardMult = 1 // Can use this to change spacing in a broad, relatively 
 const tinyDivider = 4
 const smallDivider = 2
 const colGapMult = standardMult
-const rowGapMult = standardMult * 1.5 // I find these gaps look better when larger than their vertical counterparts.
+// I find these gaps look better when larger than their vertical counterparts.
+const rowGapMult = standardMult * 1.25 
 const largeMult = 2
 const xLargeMult = 4
 
@@ -26,7 +27,7 @@ export const rowGap = `${(baseSize * scale * rowGapMult)}px`
 export const largeRowGap = `${(baseSize * scale * rowGapMult) * largeMult}px`
 export const xLargeRowGap = `${(baseSize * scale * rowGapMult) * xLargeMult}px`
 
-// Values used for responsive behavior I want. See function "calcAppColumnWidths()" for some additional detail.
+// First two values here not yet implemented into css calculations.
 export const normalContentWidth = 958 // Px size of content on a 1920px screen.
 export const contentWidthPercentageOfHugeWindow = 0.7
 export const smallScreenWidthInt = 520

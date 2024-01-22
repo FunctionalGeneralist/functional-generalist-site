@@ -5,6 +5,6 @@ import { ReactElement } from "react";
 export const screenIsSmallAtom = atom(false)
 
 // Hidden as in "display: none", collapsed can still be accessed.
-export const sidebarIsHiddenAtom = atom(true)
+export const sidebarIsHiddenAtom = atom(true) 
 export const sidebarIsCollapsedAtom = atom(true)
 export const sideBarContentAtom = atom<ReactElement[]>([])

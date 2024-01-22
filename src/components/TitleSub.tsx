@@ -11,7 +11,7 @@ export default function TitleSub(props: Props) {
   const styles: StyleSheetCSS = {
     subtitle: {
       display: "grid",
-      fontSize: fontSizes.smallMedium,
+      fontSize: fontSizes.medium,
       fontWeight: fontWeights.medium,
       color: colors.text.secondary,
       justifySelf: "left",

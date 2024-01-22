@@ -1,5 +1,4 @@
 import Page from "../components/Page"
-import {styleRules} from "../style/styles"
 import Title from "../components/Title"
 import ElementSpacer from "../components/ElementSpacer"
 import StringCheeseLogo from "../assets/string-cheese-logo-not-original.jpg"
@@ -11,6 +10,9 @@ import SimpleDmxController from "../assets/simple-dmx-controller-arduino-beauty-
 import {useEffect} from "react"
 import Documents from "../assets/documents.svg"
 import DndTable from "../assets/dnd-table-overall.jpg"
+import slugs from "../constants/navSlugs"
+import { articleTeachingEffectivelyTitle } from "./ArticleTeachingEffectively"
+import { simpleDmxControllerTitle } from "./ProjectSimpleDmxController"
 
 export default function PageHome() {
   const screenIsSmall = useAtomValue(screenIsSmallAtom)
@@ -37,8 +39,16 @@ export default function PageHome() {
           image={SimpleDmxController}
           altDescription="A microcontroller with a DMX expansion board"
           enableDefaultHoverBehavior={true}
-          overlayText={"DMX Controller with\nReact App"}
-          navigateLocation="/projects/simple-dmx-controller" />
+          overlayText={simpleDmxControllerTitle}
+          navigateLocation={slugs.simpleDmxController} />
+
+        <CardImage
+          image={Documents}
+          altDescription="An icon that looks like a document"
+          enableDefaultHoverBehavior={true}
+          overlayText={articleTeachingEffectivelyTitle}
+          navigateLocation={slugs.teachingEffectively}
+          padImage={true} />
 
         <CardImage
           image={StringCheeseLogo}
@@ -46,37 +56,6 @@ export default function PageHome() {
           enableDefaultHoverBehavior={true}
           overlayText={`Comedy Podcast\nI'm a Host On`}
           externalLink="https://www.stringcheesepodcast.com/"/>
-
-        <CardImage
-          image={Documents}
-          altDescription="An icon that looks like a document"
-          enableDefaultHoverBehavior={true}
-          overlayText={`Placeholder Article\nAbout Thing`}
-          navigateLocation="/articles/given-bad-career-advice"
-          padImage={true}/>
-
-        <CardImage
-          image={DndTable}
-          altDescription="An icon that looks like a document"
-          enableDefaultHoverBehavior={true}
-          overlayText="Placeholder Project"
-          navigateLocation="/projects/none" />
-
-        <CardImage
-          image={Documents}
-          altDescription="An icon that looks like a document"
-          enableDefaultHoverBehavior={true}
-          overlayText={`Placeholder Article`}
-          navigateLocation="/articles/given-bad-career-advice"
-          padImage={true}/>
-
-        <CardImage
-          image={Documents}
-          altDescription="An icon that looks like a document"
-          enableDefaultHoverBehavior={true}
-          overlayText="Another Placeholder"
-          navigateLocation="/articles/given-bad-career-advice"
-          padImage={true} />
 
       </ContainerGrid>
 

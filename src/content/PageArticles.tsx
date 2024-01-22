@@ -4,6 +4,8 @@ import { screenIsSmallAtom, sideBarContentAtom, sidebarIsCollapsedAtom } from ".
 import CardImage from "../components/CardImage";
 import Page from "../components/Page";
 import Documents from "../assets/documents.svg"
+import { articleTeachingEffectivelyTitle } from "./ArticleTeachingEffectively";
+import navSlugs from "../constants/navSlugs";
 
 export default function PageArticles() {
   const screenIsSmall = useAtomValue(screenIsSmallAtom)
@@ -21,11 +23,11 @@ export default function PageArticles() {
       addFollowingLine={true}>
       <CardImage
         image={Documents}
-        overlayText="You Were Probably Given Awful Advice on Choosing a Career but It's Not Too Late To Change"
+        overlayText={articleTeachingEffectivelyTitle}
         enableDefaultHoverBehavior={true}
         padImage={true}
         altDescription="An icon that indicates a document or documents"
-        navigateLocation="/articles/given-bad-career-advice" />
+        navigateLocation={navSlugs.teachingEffectively} />
     </Page>
   )
 }

@@ -9,7 +9,6 @@ import {colGap, rowGap, smallColGap, smallScreenWidth, styleRules} from "./style
 import {useAtom, useAtomValue} from "jotai"
 import {screenIsSmallAtom, sidebarIsCollapsedAtom} from "./atoms"
 import {useEffect, useRef, useState} from "react"
-import ArticleGeneralistsInSpecializedWorld from "./content/ArticleGeneralists"
 import PageArticles from "./content/PageArticles"
 import ContainerGrid from "./components/ContainerGrid"
 import ProjectDndTable from "./content/ProjectDndTable"
@@ -17,6 +16,8 @@ import ProjectSimpleDmxController from "./content/ProjectSimpleDmxController"
 import Sidebar from "./components/Sidebar"
 import PageProjects from "./content/PageProjects"
 import ElementSpacer from "./components/ElementSpacer"
+import ArticleTeachingEffectively from "./content/ArticleTeachingEffectively"
+import slugs from "./constants/navSlugs"
 
 export default function App() {
   const [screenIsSmall, setScreenIsSmall] = useAtom(screenIsSmallAtom)
@@ -87,14 +88,14 @@ export default function App() {
 
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/home" element={<HomePage />} />
+            <Route path={slugs.home} element={<HomePage />} />
 
-            <Route path="/projects" element={<PageProjects />} />
-            <Route path="/projects/simple-dmx-controller" element={<ProjectSimpleDmxController />} />
-            <Route path="/projects/dnd-table" element={<ProjectDndTable />} />
+            <Route path={slugs.projects} element={<PageProjects />} />
+            <Route path={slugs.simpleDmxController} element={<ProjectSimpleDmxController />} />
+            <Route path={slugs.dndTable} element={<ProjectDndTable />} />
 
-            <Route path="/articles" element={<PageArticles />} />
-            <Route path="/articles/given-bad-career-advice" element={<ArticleGeneralistsInSpecializedWorld />} />
+            <Route path={slugs.articles} element={<PageArticles />} />
+            <Route path={slugs.teachingEffectively} element={<ArticleTeachingEffectively />} />
 
             <Route path="*" element={<PageNotFound />} />
 

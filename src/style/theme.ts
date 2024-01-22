@@ -66,8 +66,8 @@ export const hardSizes = {
     veryThin: "1px",
     thin: "2px"
   },
-  sidebarWidth: "240px",
-  sidebarWidthInt: 240
+  sidebarWidth: "300px",
+  sidebarWidthInt: 300
 }
 
 export const fontSizes = {
