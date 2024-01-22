@@ -18,7 +18,6 @@ export default function ProjectSimpleDmxController() {
   const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
 
   useEffect(() => {
-    setSidebarIsCollapsed(false)
     setSidebarContent([
       <a target="_blank" rel="noreferrer" href="https://github.com/FunctionalGeneralist/simple-dmx-controller-arduino">Microcontroller GitHub Repo</a>,
       <a target="_blank" rel="noreferrer" href="https://github.com/FunctionalGeneralist/simple-dmx-controller">React Native App GitHub Repo</a>

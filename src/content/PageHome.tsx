@@ -20,7 +20,6 @@ export default function PageHome() {
   const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
 
   useEffect(() => {
-    setSidebarIsCollapsed(false)
     setSidebarContent([<a href="https://github.com/FunctionalGeneralist/functional-generalist-site" target="_blank" rel="noreferrer">This sites GitHub repo</a>])
   }, [setSidebarIsCollapsed, setSidebarContent])
 
