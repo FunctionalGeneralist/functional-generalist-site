@@ -10,4 +10,5 @@ Other features are more my personal preference but that I think make development
 
 # Style Configuration
 "Fundamental" CSS values are kept and calculated in styles.ts, namely element spacing and the breakpoint for desktop to mobile view.
+
 "Theme" values are kept in theme.ts, such as the color palette. Honestly, these *could* be in the same file but the differentitation between the two is logical enough to me.
