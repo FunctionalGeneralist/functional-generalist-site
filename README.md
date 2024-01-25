@@ -6,7 +6,7 @@ This site, made with ReactJS and TypeScript, has a number of notable features th
 
 Other features are more my personal preference but that I think make development easier or are beneficial overall:
 - is a Single Page Application
-- Utilizes entirely grid containers with row-gap, column-gap, justify, align and padding to determine childrens position and spacing. This way, children aren't pushing around other children using margin, the only time margin is used is when its set to 0 to override default margin values on things like headers and paragraph text
+- Utilizes entirely grid containers with row-gap, column-gap, justify, align and padding to determine childrens position and spacing. This way, children aren't pushing around other children using margin, the only time margin is used is when its set to 0 to override default margin values on things like headers and paragraph text. If this sounds unusual or bad to you, use an inspector to turn on the grid lines of the sites elements, it's much easier to place children precisely when they aren't bullying each other with margin
 
 # Style Configuration
 "Fundamental" CSS values are kept and calculated in styles.ts, namely standardized element spacing and the breakpoint for desktop to mobile view. These values are not meant to be alterable by the user.
