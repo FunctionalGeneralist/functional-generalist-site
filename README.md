@@ -2,7 +2,7 @@
 This site, made with ReactJS and TypeScript, has a number of notable features that are good for a smaller personal site:
 - No backend
 - All important CSS values, such as the sites color palette, element spacing and more kept in a single file with logical, easy to understand variable names for easy dev configuration. Styling is done in component using these values, so no confusing or conflicting classes
-- Flexible components with many props, all of which are self documenting or explcitely documented in-code.
+- Flexible components with many props, all of which are self documenting or explicitly documented in-code.
 
 Other features are more my personal preference but that I think make development easier or are beneficial overall:
 - is a Single Page Application
