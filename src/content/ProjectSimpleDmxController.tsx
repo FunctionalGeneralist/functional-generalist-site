@@ -35,7 +35,8 @@ export default function ProjectSimpleDmxController() {
         colSizes={[1, 1]}
         textBlocks={[
           <p><span style={textBlockStarter}>This</span> was originally made back in 2020 when I was relatively new to programming, in hindsight it's amazing that I got all the way to completion because many parts were a true nightmare for a novice developer.</p>,
-          <p>I started this project to solve a problem at the school I taught at, namely that it was very annoying for both me and other staff to turn on the lights on stage. Professional lighting equipment isn't controlled by simple dimmer switchs, instead it's controlled by rather complicated dimmer switches, which are themselves controlled from a dedicated lighting controller like the popular ETC Ion you see pictured here.</p>
+          <p>I started this project to solve a problem at the school I taught at, namely that it was very annoying for both me and other staff to turn on the lights on stage. Professional lighting equipment isn't controlled by simple dimmer switchs, instead it's controlled by rather complicated dimmer switches, which are themselves controlled from a dedicated lighting controller like the popular ETC Ion you see pictured here.</p>,
+          <p>These controllers are bulky, <i>very</i> expensive, require some technical knowledge to use, and are typically located in the booth where the tech personnel control the show which is in the very back of the house (where the audience sits) and up a flight of stairs. Most venues, ours included, have a very simple controller onstage for daily use. Ours, however, was broken and funds for a replacement were nonexistent.</p>
         ]}
         inlineElement={
           <CardImage
@@ -43,8 +44,6 @@ export default function ProjectSimpleDmxController() {
             altDescription="a professional lighting controller, an ETC Ion"
             subtitleText="Functionally a $20,000 Windows 7 device with neato switches and a UI that's hardly advanced since the 80's" />
         } />
-
-      <TextBlock text={(<p>These controllers are bulky, <i>very</i> expensive, require some technical knowledge to use, and are typically located in the booth where the tech personnel control the show which is in the very back of the house (where the audience sits) and up a flight of stairs. Most venues, ours included, have a very simple controller onstage for daily use. Ours, however, was broken and funds for a replacement were nonexistent.</p>)} />
 
       <TextBlock
         titleText="SparkFun to the Rescue"

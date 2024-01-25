@@ -40,34 +40,42 @@ export default function Sidebar() {
   }, [screenIsSmall, setSidebarIsCollapsed, setSidebarIsHidden])
 
   return (
-    <>
+    <ContainerGrid
+      numCols={1}
+      colGap="0px"
+      rowGap="0px"
+      justifyContent="left"
+      rowStyle="min"
+      alignContent="start"
+      justifyItems="left">
       {/*Keeps the sidebar's space to work with responsive jazz*/}
       <ElementSpacer
-        heightOverride="100%"
+        heightOverride={`${extractIntFromPx(usedSpacerSizes.headerAndPageContentInt)}px`}
         widthOverride={hardSizes.sidebarWidth}/>
 
       <ContainerGrid
         gridColTemplateOverride="1fr min-content"
         colGap={"0"}
         numRows={1}
-        gridArea={setGridAreas.appSidebar}
         minHeight={"300px"}
-        minWidth={`${hardSizes.sidebarWidthInt}px`}
-        maxWidth={`${hardSizes.sidebarWidthInt}px`}
+        minWidth={sidebarIsCollapsed ? "16px" : `${hardSizes.sidebarWidthInt}px`}
+        maxWidth={sidebarIsCollapsed ? "16px" : `${hardSizes.sidebarWidthInt}px`}
         isMinContentHigh={true}
         backgroundColor={colors.containers.nav}
         isDisplayNone={sidebarIsHidden}
         borderRadius={`0 ${borderRadii.base} ${borderRadii.base} 0`}
-        position={"absolute"}
-        top={`${extractIntFromPx(hardSizes.header) + extractIntFromPx(hardSizes.headerBottomBorder) + extractIntFromPx(usedSpacerSizes.headerAndPageContentInt)}px`}
-        left={sidebarIsCollapsed ? `-${hardSizes.sidebarWidthInt - chevronWidthInt}px` : "0"}
         transitionDur={150}>
         <ContainerGrid
           numCols={1}
+          isInvis={sidebarIsCollapsed ? true : false}
           justifyItems="left"
           rowStyle="min"
           alignContent="start"
           rowGap={smallRowGap}
+          minWidth={sidebarIsCollapsed ? "0" : "100%"}
+          maxWidth={sidebarIsCollapsed ? "0" : "100%"}
+          transitionDur={sidebarIsCollapsed ? 0 : 250}
+          isDisplayNone={sidebarIsCollapsed ? true : false}
           padding={`${styleRules.internalPadding} ${smallColGap}`}>
           <Title titleText="Contextual Stuff" titleType="small" justifyTitle="center" addFollowingLine={true} />
           {content}
@@ -89,6 +97,6 @@ export default function Sidebar() {
 
       </ContainerGrid>
 
-    </>
+    </ContainerGrid>
   )
 }
