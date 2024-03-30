@@ -130,7 +130,7 @@ export default function Title(props: Props) {
       default:
         setTitleElement(pageTitle)
     }
-  }, [props.titleType, screenIsSmall, commonStyles.titles, props.titleText])
+  }, [])
 
   return (
     <ContainerGrid

@@ -18,6 +18,7 @@ import PageProjects from "./content/PageProjects"
 import ElementSpacer from "./components/ElementSpacer"
 import ArticleTeachingEffectively from "./content/ArticleTeachingEffectively"
 import slugs from "./constants/navSlugs"
+import PageWarnoSeizeDeep from "./content/PageWarnoAssaultDeep"
 
 export default function App() {
   const [screenIsSmall, setScreenIsSmall] = useAtom(screenIsSmallAtom)
@@ -81,8 +82,6 @@ export default function App() {
       <div style={styles.pageContainer}>
         <Header />
 
-        <Sidebar />
-
         <div style={styles.contentContainer}>
           <ElementSpacer size={usedSpacerSizes.headerAndPageContent} />
 
@@ -96,6 +95,8 @@ export default function App() {
 
             <Route path={slugs.articles} element={<PageArticles />} />
             <Route path={slugs.teachingEffectively} element={<ArticleTeachingEffectively />} />
+
+            <Route path={slugs.warnoSeizeDeep} element={<PageWarnoSeizeDeep /> } />
 
             <Route path="*" element={<PageNotFound />} />
 

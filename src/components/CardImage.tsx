@@ -64,7 +64,6 @@ export default function CardImage(props: Props) {
   )
 
   const overlayAfterHover = (
-
     <ContainerGrid
       gridRowStart={1}
       gridColumnStart={1}
