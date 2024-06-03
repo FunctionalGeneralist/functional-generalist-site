@@ -4,6 +4,7 @@ export default function ProjectDndTable() {
   return (
     <Page
       titleText="D&D Table"
+      subtitleText=""
     >
 
     </Page>

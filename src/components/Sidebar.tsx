@@ -28,17 +28,6 @@ export default function Sidebar() {
     setSidebarIsCollapsed(!sidebarIsCollapsed)
   }
 
-  useEffect(() => {
-    if (screenIsSmall) {
-      setSidebarIsCollapsed(true)
-      setSidebarIsHidden(true)
-    }
-    else {
-      setSidebarIsHidden(false)
-    }
-
-  }, [screenIsSmall, setSidebarIsCollapsed, setSidebarIsHidden])
-
   return (
     <ContainerGrid
       numCols={1}

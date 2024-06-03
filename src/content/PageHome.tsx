@@ -16,6 +16,12 @@ import { simpleDmxControllerTitle } from "./ProjectSimpleDmxController"
 
 export default function PageHome() {
   const screenIsSmall = useAtomValue(screenIsSmallAtom)
+  const [sidebarIsCollapsed, setSidebarIsCollapsed] = useAtom(sidebarIsCollapsedAtom)
+  const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
+
+  useEffect(() => {
+    setSidebarContent([<a href="https://github.com/FunctionalGeneralist/functional-generalist-site" target="_blank" rel="noreferrer">This sites GitHub repo</a>])
+  }, [setSidebarIsCollapsed, setSidebarContent])
 
   return (
     <Page
