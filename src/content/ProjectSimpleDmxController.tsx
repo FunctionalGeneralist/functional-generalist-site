@@ -27,7 +27,7 @@ export default function ProjectSimpleDmxController() {
   return (
     <Page
       titleText="Simple DMX Controller"
-      subtitleText="Arduino with HAT that issues DMX-512 intensity commands to channels, either individually or in groups of up to 32, controlled from mobile app via Bluetooth"
+      subtitleText="Arduino with HAT that issues DMX512 intensity commands to channels, either individually or in groups of up to 32, controlled from mobile app via Bluetooth"
       additionalSubtitleText="Published 2024/01/17"
       italicizeAddSubtitle={true}
       addFollowingLine={true}>
@@ -47,12 +47,12 @@ export default function ProjectSimpleDmxController() {
 
       <TextBlock
         titleText="SparkFun to the Rescue"
-        text={(<p>SparkFun is a small-ish manufacturer of Arduino-type microcontrollers (and a very good one, in my opinion) and I discovered that they made a HAT that allowed their ESP32 Thing Plus to send and receive signals in the DMX512 protocol, which is used to talk to most professional lighting equipment. It was also the height of the 2020 pandemic and I had been working on learning CS and programming to transition careers, so I threw caution and the requisite $40 for the hardware to the wind. I thought it would be tough, but I was up to a challenge and had a lot free time, I'll crank this out in a couple months right? ...Right?</p>)}
+        text={(<p>SparkFun is a small-ish manufacturer of Arduino-type microcontrollers (a very good one imo) and I discovered that they made a HAT that allowed their ESP32 Thing Plus to send and receive signals in the DMX512 protocol, which is used to talk to most professional lighting equipment. I figured I could probably write a program for the Arduino (which are written in C++) that would let me remotely issue commands to it over wifi or bluetooth, and it in turn would issue DMX512 commands to control the intensity of lights. If I could also write a mobile app to issue those commands, I could have the other staff download it and we wouldn't have to constantly trek up the stairs.</p>)}
       />
 
       <TextBlock
         titleText="Design"
-        text={(<p>Armed with this microcontroller capable of communication over wifi and bluetooth, my phone, a few CS50 courses and way too much ambition, I began by laying out some broad design objectives.</p>)}
+        text={(<p>Armed with this microcontroller capable of communication over wifi and bluetooth, my Android phone and a few CS50 courses, I laid out some broad design objectives.</p>)}
       />
       <ListBulletPoints
         textStrings={[
