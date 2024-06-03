@@ -56,17 +56,16 @@ export default function ProjectSimpleDmxController() {
       />
       <ListBulletPoints
         textStrings={[
-          "First, it needs to be extremely fast to turn on and off the lights. Nobody is going to use the app if takes forever to connect or there's many actions that need to be taken to do so. I would like the user to be able to open the app and be immediately presented with a slider to fade up their particular group of lights, no additional actions, no waiting for more than a handful of seconds for the app to wirelessly.",
-          "Second, it needs to be childishly simple for the end user to use while also including some more technical options for the resident lighting technician (myself in this case, although I was hoping other people could use this thing, which some people actually did! Shoutout to that one French guy that emailed me).",
-          "And finally, it has to be dirt cheap. I'm doing this of own volition, god only knows why, and on a salary funded by the US public school system that means inexpensive is the name of the game. That was easy enough, the microcontroller and HAT cost me about $40 and I'll be writing both the mobile app and microcontroller code myself. The biggest cost by far ended up being the tremendous damage to me, mostly whatever metrics that are used to measure an individuals general level of innocence, overall contentment with life, stuff like that. We'll get to that."
+          "First, it needs to be extremely fast to turn on and off the lights. Nobody is going to use the app if takes forever to connect or there's many actions that need to be taken before the lights can be controlled. I would like the user to be able to open the app and be immediately presented with a slider to fade up their particular group of lights, no additional actions, no waiting for more than a handful of seconds for the app to automatically connect.",
+          "Second, it needs to be childishly simple for the end user to use while also including some more technical options for the resident lighting technician (myself in this case, although I was hoping other people could use this thing, which some people actually did! Shoutout to that one French guy that emailed me)."
         ]}
       />
       <CardImage
         image={SimpleDmxControllerBeautyShot}
         altDescription="a microcontroller with a DMX hat"
-        subtitleText="Enjoy this picture of the microcontroller in question, it breaks up visual monotony and ideally helps your brain stay engaged"
+        subtitleText="Enjoy this picture of the microcontroller in question, it breaks up visual monotony and helps your brain stay engaged"
       />
-      <TextBlock text={<p>We can only control the intensity (level of brightness) of these older lighting instruments. The DMX commands the microcontroller will be issuing to control the lights are pretty simple: specify a channel, which is an int between 1 and 512, and an intensity between 0 and 100. Large, computer controlled dimmers then adjust the amount of power sent to that channel (which here is essentially just a power circuit) and the attached light changes in intensity.</p>} />
+      <TextBlock text={<p>We only need to remotely control the intensity (level of brightness) of the lights, so it's the only type of DMX command I'll need to figure out. The DMX commands the microcontroller will be issuing to control the lights are pretty simple in the code because SparkFun wrote a library for their HAT. The intensity set function needs the following inputs: specify a channel, which is an int between 1 and 512, and an intensity between 0 and 100. Large, computer controlled dimmers then adjust the amount of power sent to that channel (which here is essentially just a power circuit) and the attached light changes in intensity.</p>} />
       <TextBlock text={<p>Precisely what the flow of the program would be would solidify as I worked on this, but here's how it ended up:</p>} />
       <ListBulletPoints
         textStrings={[
