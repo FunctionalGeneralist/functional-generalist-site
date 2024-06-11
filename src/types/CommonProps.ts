@@ -34,6 +34,7 @@ export interface ContainerProps {
 
   padding?: string
   margin?: string // Margin to be avoided in 99.9% of cases, use padding in the parent instead. Trust ContainerGrid to provide all you need.
+
   borderRadius?: string
   borderThickness?: string // Defaults to 2px.
   borderColor?: "primary" | string // The string should be used as a rare override, things agnostic to the theme color palette. Add more "line" colors for theme lines.
@@ -54,7 +55,7 @@ export interface ContainerProps {
   maxWidth?: string
   isMinContentHigh?: boolean
 
-  position?: "absolute"
+  position?: "absolute" | "sticky"
   isInvis?: boolean
   isDisplayNone?: boolean
   zIndex?: number

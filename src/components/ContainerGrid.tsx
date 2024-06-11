@@ -5,6 +5,7 @@ import { colors, durations, hardSizes } from "../style/theme"
 import {ContainerProps, InteractableProps, CommonProps, AnimationProps } from "../types/CommonProps"
 import StyleSheetCSS from "../types/Style"
 import Line from "./Line"
+import { TitleProps } from "./Title"
 
 interface Props extends ContainerProps, InteractableProps, AnimationProps {
   gridArea?: string

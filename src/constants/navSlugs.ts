@@ -3,11 +3,13 @@ function buildSlugs() {
   let projects = "/projects"
   let articles = "/articles"
   let gamingThings = "/gaming-things"
+  let contactAndAbout = "/contact-and-about"
 
   return {
     home: home,
     projects: projects,
     articles: articles,
+    contactAndAbout: contactAndAbout,
 
     // Projects.
     simpleDmxController: projects + "/simple-dmx-controller",

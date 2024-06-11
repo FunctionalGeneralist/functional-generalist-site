@@ -1,7 +1,7 @@
 import TextBlock from "../components/TextBlock"
 import Page from "../components/Page"
 import { textBlockStarter } from "../style/commonStyles"
-import { sideBarContentAtom } from "../atoms"
+import { sidebarContentAtom } from "../atoms"
 import { useAtom } from "jotai"
 import { useEffect } from "react"
 import ListBulletPoints from "../components/ListBulletPoints"
@@ -9,7 +9,7 @@ import ListBulletPoints from "../components/ListBulletPoints"
 export const articleTeachingEffectivelyTitle = "Teaching Effectively\n as a Non-Teacher"
 
 export default function ArticleTeachingEffectively() {
-  const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
+  const [sidebarContent, setSidebarContent] = useAtom(sidebarContentAtom)
 
   useEffect(() => {
     setSidebarContent([<></>])

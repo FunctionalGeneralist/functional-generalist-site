@@ -1,6 +1,6 @@
 import { useAtom, useAtomValue } from "jotai";
 import { useEffect, useState } from "react";
-import { screenIsSmallAtom, sideBarContentAtom, sidebarIsCollapsedAtom } from "../atoms";
+import { screenIsSmallAtom, sidebarContentAtom, sidebarIsCollapsedAtom } from "../atoms";
 import CardImage from "../components/CardImage";
 import Page from "../components/Page";
 import Documents from "../assets/documents.svg"
@@ -9,7 +9,7 @@ import navSlugs from "../constants/navSlugs";
 
 export default function PageArticles() {
   const screenIsSmall = useAtomValue(screenIsSmallAtom)
-  const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
+  const [sidebarContent, setSidebarContent] = useAtom(sidebarContentAtom)
   const [sidebarIsCollapsed, setSidebarIsCollapsed] = useAtom(sidebarIsCollapsedAtom)
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import {useAtom} from "jotai"
 import {useEffect} from "react"
-import {sideBarContentAtom, sidebarIsCollapsedAtom} from "../atoms"
+import {sidebarContentAtom, sidebarIsCollapsedAtom} from "../atoms"
 import Page from "../components/Page"
 import TextBlock from "../components/TextBlock"
 import {textBlockStarter} from "../style/commonStyles"
@@ -15,7 +15,7 @@ export const simpleDmxControllerTitle = "DMX512 Controller with\n React Native A
 
 export default function ProjectSimpleDmxController() {
   const [sidebarIsCollapsed, setSidebarIsCollapsed] = useAtom(sidebarIsCollapsedAtom)
-  const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
+  const [sidebarContent, setSidebarContent] = useAtom(sidebarContentAtom)
 
   useEffect(() => {
     setSidebarContent([
@@ -34,7 +34,7 @@ export default function ProjectSimpleDmxController() {
       <TextBlockWithInlineElement
         colSizes={[1, 1]}
         textBlocks={[
-          <p>Links to the Arduino and React Native repo's are in the sidebar on the left, both of which contain all of the documentation you need to make one and the code is documented if you want to add more capabilities to this thing.</p>,
+          <p><span style={textBlockStarter}>Links</span> to the Arduino and React Native repo's are in the sidebar on the left, both of which contain all of the documentation you need to make one and the code is documented if you want to add more capabilities to this thing.</p>,
           <p>I started this project to solve a problem at the school I taught at, namely that it was very annoying for both me and other staff to turn on the lights on stage. Professional lighting equipment isn't controlled by simple dimmer switchs, instead it's controlled by rather complicated dimmer switches, which are themselves controlled from a dedicated lighting controller like the popular ETC Ion you see pictured here.</p>,
           <p>These controllers are bulky, <i>very</i> expensive, require some technical knowledge to use, and are typically located in the booth where the tech personnel control the show which is in the very back of the house (where the audience sits) and up a flight of stairs. Most venues, ours included, have a very simple controller onstage for daily use. Ours, however, was broken and funds for a replacement were nonexistent.</p>
         ]}

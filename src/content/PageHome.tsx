@@ -4,7 +4,7 @@ import ElementSpacer from "../components/ElementSpacer"
 import StringCheeseLogo from "../assets/string-cheese-logo-not-original.jpg"
 import ContainerGrid from "../components/ContainerGrid"
 import { useAtom, useAtomValue } from "jotai"
-import { screenIsSmallAtom, sideBarContentAtom, sidebarIsCollapsedAtom, sidebarIsHiddenAtom } from "../atoms"
+import { screenIsSmallAtom, sidebarContentAtom, sidebarIsCollapsedAtom, sidebarIsHiddenAtom } from "../atoms"
 import CardImage from "../components/CardImage"
 import SimpleDmxController from "../assets/simple-dmx-controller-arduino-beauty-shot.jpg"
 import {useEffect} from "react"
@@ -17,10 +17,10 @@ import { simpleDmxControllerTitle } from "./ProjectSimpleDmxController"
 export default function PageHome() {
   const screenIsSmall = useAtomValue(screenIsSmallAtom)
   const [sidebarIsCollapsed, setSidebarIsCollapsed] = useAtom(sidebarIsCollapsedAtom)
-  const [sidebarContent, setSidebarContent] = useAtom(sideBarContentAtom)
+  const [sidebarContent, setSidebarContent] = useAtom(sidebarContentAtom)
 
   useEffect(() => {
-    setSidebarContent([<a href="https://github.com/FunctionalGeneralist/functional-generalist-site" target="_blank" rel="noreferrer">This sites GitHub repo</a>])
+    setSidebarContent([<a key="thissitesgithub" href="https://github.com/FunctionalGeneralist/functional-generalist-site" target="_blank" rel="noreferrer">This sites GitHub repo</a>])
   }, [setSidebarIsCollapsed, setSidebarContent])
 
   return (

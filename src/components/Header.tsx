@@ -12,6 +12,7 @@ import {useState} from "react"
 import CardPrimary from "./CardPrimary"
 import Line from "./Line"
 import ElementSpacer from "./ElementSpacer"
+import navSlugs from "../constants/navSlugs"
 
 export default function Header() {
   const [popoverAnchorRef, setPopoverAnchorRef] = useState<HTMLElement | null>(null)
@@ -70,6 +71,8 @@ export default function Header() {
       <HeaderNavItem displayText="Projects" path="/projects" />
       <Line type="horizontal" />
       <HeaderNavItem displayText="Articles" path="/articles" />
+      <Line type="horizontal" />
+      <HeaderNavItem displayText="Contact & About" path={navSlugs.contactAndAbout} />
     </ContainerGrid>
   )
 
@@ -101,6 +104,7 @@ export default function Header() {
         rowGap="0"
         justifyContent="left"
         justifyItems="left"
+        borderRadius="0"
         gridArea={setGridAreas.appHeader}
         backgroundColor={colors.containers.nav}
         showBottomBorder={true}>
@@ -121,6 +125,8 @@ export default function Header() {
           <HeaderNavItem displayText="Projects" path="/projects" />
 
           <HeaderNavItem displayText="Articles" path="/articles" />
+
+          <HeaderNavItem displayText="Contact & About" path={navSlugs.contactAndAbout} />
 
         </ContainerGrid>
 

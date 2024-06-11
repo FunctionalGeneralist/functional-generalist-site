@@ -42,7 +42,8 @@ export const styleRules = {
   borderRadius: "4px",
   siteTitleOffset: -3,
   zIndexes: {
-    imageOverlay: 10
+    imageOverlay: 10,
+    sidebar: 100
   }
 }
 

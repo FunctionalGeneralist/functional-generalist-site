@@ -1,6 +1,6 @@
 import {useAtom, useAtomValue} from "jotai"
 import {ReactElement, useEffect, useState} from "react"
-import {screenIsSmallAtom, sideBarContentAtom, sidebarIsCollapsedAtom, sidebarIsHiddenAtom} from "../atoms"
+import {screenIsSmallAtom, sidebarContentAtom, sidebarIsCollapsedAtom, sidebarIsHiddenAtom} from "../atoms"
 import {smallColGap, smallRowGap, styleRules, tinyColGap} from "../style/styles"
 import {borderRadii, colors, durations, hardSizes, setGridAreas, usedSpacerSizes} from "../style/theme"
 import ContainerGrid from "./ContainerGrid"
@@ -10,6 +10,7 @@ import ElementIcon from "./ElementIcon"
 import Title from "./Title"
 import ElementSpacer from "./ElementSpacer"
 import {extractIntFromPx} from "../helpers/styleH"
+import StyleSheetCSS from "../types/Style"
 
 export default function Sidebar() {
   const [isChevronHovered, setIsChevronHovered] = useState(false)
@@ -17,7 +18,7 @@ export default function Sidebar() {
 
   const [sidebarIsHidden, setSidebarIsHidden] = useAtom(sidebarIsHiddenAtom)
   const [sidebarIsCollapsed, setSidebarIsCollapsed] = useAtom(sidebarIsCollapsedAtom)
-  const content = useAtomValue(sideBarContentAtom)
+  const content = useAtomValue(sidebarContentAtom)
   const screenIsSmall = useAtomValue(screenIsSmallAtom)
 
   function chevronHoverHandler(e: React.MouseEvent<HTMLElement, MouseEvent>, isBeingHovered: boolean) {
@@ -28,23 +29,27 @@ export default function Sidebar() {
     setSidebarIsCollapsed(!sidebarIsCollapsed)
   }
 
+  const styles: StyleSheetCSS = {
+    container: {
+      display: "grid",
+      gridTemplateRows: "min-content 1fr",
+      alignContent: "start",
+    }
+  }
+
   return (
-    <ContainerGrid
-      numCols={1}
-      colGap="0px"
-      rowGap="0px"
-      justifyContent="left"
-      rowStyle="min"
-      alignContent="start"
-      justifyItems="left">
+    <div style={styles.container}>
       {/*Keeps the sidebar's space to work with responsive jazz*/}
       <ElementSpacer
         heightOverride={`${extractIntFromPx(usedSpacerSizes.headerAndPageContentInt)}px`}
         widthOverride={hardSizes.sidebarWidth}/>
 
       <ContainerGrid
+        position="sticky"
+        zIndex={styleRules.zIndexes.sidebar}
         gridColTemplateOverride="1fr min-content"
         colGap={"0"}
+        top={`${extractIntFromPx(usedSpacerSizes.headerAndPageContentInt)}px`}
         numRows={1}
         minHeight={"300px"}
         minWidth={sidebarIsCollapsed ? "16px" : `${hardSizes.sidebarWidthInt}px`}
@@ -86,6 +91,6 @@ export default function Sidebar() {
 
       </ContainerGrid>
 
-    </ContainerGrid>
+    </div>
   )
 }

@@ -5,10 +5,10 @@ import './index.scss'
 import Header from "./components/Header"
 import HomePage from "./content/PageHome"
 import PageNotFound from "./content/PageNotFound"
-import {colGap, rowGap, smallColGap, smallScreenWidth, styleRules} from "./style/styles"
+import {colGap, smallScreenWidth, styleRules} from "./style/styles"
 import {useAtom, useAtomValue} from "jotai"
 import {screenIsSmallAtom, sidebarIsCollapsedAtom} from "./atoms"
-import {useEffect, useRef, useState} from "react"
+import {useEffect} from "react"
 import PageArticles from "./content/PageArticles"
 import ContainerGrid from "./components/ContainerGrid"
 import ProjectDndTable from "./content/ProjectDndTable"
@@ -19,6 +19,7 @@ import ElementSpacer from "./components/ElementSpacer"
 import ArticleTeachingEffectively from "./content/ArticleTeachingEffectively"
 import slugs from "./constants/navSlugs"
 import PageWarnoSeizeDeep from "./content/PageWarnoSeizeDeep"
+import PageAbout from "./content/PageAbout"
 
 export default function App() {
   const [screenIsSmall, setScreenIsSmall] = useAtom(screenIsSmallAtom)
@@ -100,6 +101,8 @@ export default function App() {
 
             <Route path={slugs.warnoSeizeDeep} element={<PageWarnoSeizeDeep /> } />
 
+            <Route path={slugs.contactAndAbout} element={<PageAbout />} />
+
             <Route path="*" element={<PageNotFound />} />
 
           </Routes>
@@ -113,6 +116,7 @@ export default function App() {
           minHeight={"60px"}
           gridArea={setGridAreas.appFooter}
           showTopBorder={true}
+          borderRadius="0"
           backgroundColor={colors.containers.nav}>
 
         </ContainerGrid>
