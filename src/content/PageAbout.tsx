@@ -27,7 +27,7 @@ export default function PageAbout() {
 
       <TextBlock
         titleText="Who are you, Jeffrey?"
-        text={(<p>Just some guy, nobody particularly special. Having your actual identity known on to the public internet seems like a generally bad idea (see: <i>So You've Been Publicly Shamed</i>) so forgive me if I'm vague in some areas. That being said, I have a varied work history that's of some note: I started out teaching technical theater at a high (secondary) school and also worked events that took place in the school's auditorium, both internal and rented. I did this for about a decade and, in addition to needing to learn a lot of the skills on the job, had some control over my activities that enabled me to learn at least a moderate amount about the following skills:</p>)}/>
+        text={(<p>Just some guy, nobody particularly special. Having your actual identity known to the internet is an overall bad idea (see: <i>So You've Been Publicly Shamed</i>) so forgive me if I'm vague in some areas. That being said, I have a varied work history that's of some note: I started out teaching technical theater at a high (secondary) school and also worked events that took place in the school's auditorium, both internal and rented. I did this for about a decade and, in addition to needing to learn a lot of the skills on the job, had some control over my activities that enabled me to learn at least a moderate amount about the following skills:</p>)}/>
 
       <ListBulletPoints
         textStrings={[
@@ -42,8 +42,8 @@ export default function PageAbout() {
         ]}
       />
 
-      <TextBlock
-        text={(<p>Naturally the pay was awful but there were a lot of less obvious perks of working the job, one of which is that I was able to learn a ton of soft skills. The mention of that might make some linkedin-weary people roll their eyes but they do matter and it was great to pick up so many useful ones. I left this job around 2022 to work in software development full time, which is what I do now, mostly web development.</p>)} />
+      <TextBlock text={(<p>Naturally the pay was awful but there were a lot of less obvious perks of working the job, one of which is that I was able to learn a ton of soft skills. The mention of that might make some linkedin-weary people roll their eyes but they do matter and it was great to pick up so many useful ones. I left this job around 2022 to work in software development full time, which is what I do now, mostly web development.</p>)} />
+      <TextBlock text={(<p>Less notable but I also worked as a freelance live audio engineer in both non-theater and theater stuff in addition to freelancing random other tech theater positions.</p>)} />
 
     </Page>
   )
