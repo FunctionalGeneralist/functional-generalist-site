@@ -9,10 +9,10 @@ import CardImage from "../components/CardImage"
 import SimpleDmxController from "../assets/simple-dmx-controller-arduino-beauty-shot.jpg"
 import {useEffect} from "react"
 import Documents from "../assets/documents.svg"
-import DndTable from "../assets/dnd-table-overall.jpg"
+import DndTable from "../assets/dnd-table/dnd-table-overall.jpg"
 import slugs from "../constants/navSlugs"
 import { articleTeachingEffectivelyTitle } from "./ArticleTeachingEffectively"
-import { simpleDmxControllerTitle } from "./ProjectSimpleDmxController"
+import {simpleDmxControllerTitle} from "./ProjectSimpleDmxController"
 
 export default function PageHome() {
   const screenIsSmall = useAtomValue(screenIsSmallAtom)
@@ -38,6 +38,7 @@ export default function PageHome() {
           image={SimpleDmxController}
           altDescription="A microcontroller with a DMX expansion board"
           enableDefaultHoverBehavior={true}
+          limitMaskToText={true}
           overlayText={simpleDmxControllerTitle}
           navigateLocation={slugs.simpleDmxController} />
 
@@ -47,14 +48,25 @@ export default function PageHome() {
           enableDefaultHoverBehavior={true}
           overlayText={articleTeachingEffectivelyTitle}
           navigateLocation={slugs.teachingEffectively}
+          limitMaskToText={true}
           padImage={true} />
 
         <CardImage
           image={StringCheeseLogo}
+          limitMaskToText={true}
           altDescription="The logo for the String Cheese Theory podcast, which is a piece of frayed string cheese in front of a brain and an atom, jokingly implying maximum brain power is found here"
           enableDefaultHoverBehavior={true}
           overlayText={`Comedy Podcast\nI'm a Host On`}
           externalLink="https://www.stringcheesepodcast.com/"/>
+
+        <CardImage
+          image={DndTable}
+          limitMaskToText={true}
+          altDescription="A hardwood table with inlaid tv covered by tempered glass"
+          enableDefaultHoverBehavior={true}
+          overlayText={`D&D Table with\n Underneath Shelf`}
+          navigateLocation={slugs.dndTable}
+        />
 
       </ContainerGrid>
 
