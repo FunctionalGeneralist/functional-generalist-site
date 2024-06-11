@@ -88,7 +88,7 @@ export default function ProjectDndTable() {
                 "Table saw (recommended)",
                 "Planer (recommended)",
                 "Random orbital sander (highly recommended)",
-                "Table router (recommended)",
+                "Table router (only if you want to make your own moulding)",
                 "Pocket screw jig (highly recommended)"
               ]} />
             
