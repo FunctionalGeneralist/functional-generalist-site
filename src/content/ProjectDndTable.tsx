@@ -39,8 +39,9 @@ export default function ProjectDndTable() {
             subtitleText="The finished product, which I think came out quite nicely" />
 
           <ListBulletPoints
+            key="requiredSkills"
             titleText="Required Skills"
-            textStrings={["Moderate fine woodworking ability", "Processing roughcut lumber to finished boards (recommended, not technically required)"]} />
+            textStrings={["Moderate woodworking ability", "Processing roughcut lumber to finished boards (recommended, not technically required)"]} />
           <ListBulletPoints
             titleText="Tools"
             textStrings={[
