@@ -162,21 +162,21 @@ export default function ProjectDndTable() {
         subtitleText="Always remember proper respiratory protection and ventilation"
       />
 
-      <TextBlock text={(<p>After thinking on how to precisely cut the center hole in the ply for the glass and screen, I couldn't think of a better solution than marking and plunge cutting with my handheld circular saw. This actually worked marvellously, the glass fit like a dream.</p>)} />
+      <TextBlock text={(<p>After thinking on how to precisely cut the center hole in the ply for the glass and screen, I couldn't think of a better solution than marking and plunge cutting with my handheld circular saw. This actually worked marvelously, the glass fit like a dream.</p>)} />
       <CardImage
         image={cutPlywood}
         altDescription="Plywood top of table with square cut for glass"
         subtitleText="No, I didn't cut this in my kitchen"
       />
 
-      <TextBlock text={(<p>After sanding and staining the plywood, it's' time to attach the frame. It attaches to the ply with pocket screws for which I used Kreg's pocket screw jig, which was great, if a little expensive. I intended (and still do) to hide 12 screws that will normally be visible by countersinking and plugging the hole, I still have some stained lumber from this project so I'll maybe do that eventually.</p>)} />
+      <TextBlock text={(<p>After sanding and staining the plywood, it's time to attach the frame. It attaches to the ply with pocket screws for which I used Kreg's pocket screw jig, which was great, if a little expensive. I intended (and still do) to hide 12 screws that will normally be visible by countersinking and plugging the hole, I still have some stained lumber from this project so I'll maybe do that eventually.</p>)} />
       <CardImage
         image={flippedTop}
         altDescription="The tabletop flipped to reveal the underside before being attached to the legs"
       />
       <TextBlock text={(<p>As you can see I did quite a few pocket screws, but the relative weakness of each screw and the weight of the ply made me a little nervous. Next is attaching the legs, I neglected to take any pictures of this process but it's relatively simple. Quick aside about the legs, which are not true 4x4's but two pieces of 2x material glued together. Pro tip for gluing two flat wood surfaces, sprinkle extremely coarse rock salt on the glue before clamping, it bites into both pieces of wood and stops them from sliding all over.</p>)} />
-      <TextBlock text={(<p>Since I want to be able to easily disassemble this table (and because I'm not familiar with other methods of attaching legs to tables and didn't bother to do research) I chose to use carriage bolts to attach the legs. There's probably a better looking solution that fits my requirements but this doesn't look so bad, a bit rustic even, after concealing the bolt heads with a bit of "rust" colored spray paint they don't stand out'.</p>)} />
-      <TextBlock text={(<p>Here's where the long shank drill bit comes in. There will be 3 bolts on one side, 2 on the other, making each leg rock solid. Make sure to start drilling from the public facing side and I would have a piece of scrap material where the bit will exit, so no wood breaks off when the bit exits. On flipping the table I was dismayed that not all of the main legs were touching down, but I soon realized my kitchen floor is hilariously uneven, so some shims will live under those legs until I move. Bottom shelf and its legs are not attached at this point, that would be one of the last things I would do.</p>)} />
+      <TextBlock text={(<p>Since I want to be able to easily disassemble this table (and because I'm not familiar with other methods of attaching legs to tables and didn't bother to do research) I chose to use carriage bolts to attach the legs. There's probably a better looking solution that fits my requirements but this doesn't look so bad, a bit rustic even, after concealing the bolt heads with a bit of "rust" colored spray paint they don't stand out.</p>)} />
+      <TextBlock text={(<p>Here's where the long shank drill bit comes in. There will be 3 bolts on one side, 2 on the other, making each leg rock solid. Make sure to start drilling from the public facing side and I would have a piece of scrap material where the bit will exit, so no wood breaks off when the bit exits. On flipping the table I was dismayed that not all of the legs were touching down, but I soon realized my kitchen floor is hilariously uneven, so some shims will live under those legs until I move. Bottom shelf and its legs are not attached at this point, that would be one of the last things I would do.</p>)} />
       <CardImage
         image={flippedTopOneLeg}
         altDescription="Underside of table with one main leg attached"
@@ -209,7 +209,7 @@ export default function ProjectDndTable() {
 
       <TextBlock
         titleText="Conclusions & What I'd Do Differently"
-        text={(<p>As I said at the top, I would eliminate the gap above and below the TV. I would also consider using thinner glass, I'm still not sure about the strength of thinner glass and I would still hit my strength requirement first, but if you're slouching in your chair it can take a moment to parse which square a mini is on exactly.</p>)}
+        text={(<p>As I said at the top, I would eliminate the gap above and below the TV. I would also consider using thinner glass, I'm still not sure about the strength of thinner glass and I would still hit my strength requirement first, but if you're slouching in your chair it can take a moment to parse precisely which square a mini is on.</p>)}
       />
 
     </Page>
