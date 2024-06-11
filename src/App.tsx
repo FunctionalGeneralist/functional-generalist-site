@@ -18,7 +18,7 @@ import PageProjects from "./content/PageProjects"
 import ElementSpacer from "./components/ElementSpacer"
 import ArticleTeachingEffectively from "./content/ArticleTeachingEffectively"
 import slugs from "./constants/navSlugs"
-import PageWarnoSeizeDeep from "./content/PageWarnoSeizeDeep"
+import PageWarnoSeizeDeep from "./content/GamesWarnoSeizeDeep"
 import PageAbout from "./content/PageAbout"
 
 export default function App() {
