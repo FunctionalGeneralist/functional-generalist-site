@@ -6,6 +6,7 @@ import Page from "../components/Page";
 import SimpleDmxController from "../assets/simple-dmx-controller-arduino-beauty-shot.jpg"
 import navSlugs from "../constants/navSlugs";
 import dndTable from "../assets/dnd-table/dnd-table-overall.jpg"
+import slxCloseup from "../assets/slx-repair/shureSlx_markedSolder.jpg"
 
 export default function PageProjects() {
   const [sidebarContent, setSidebarContent] = useAtom(sidebarContentAtom)
@@ -35,6 +36,13 @@ export default function PageProjects() {
         navigateLocation={navSlugs.dndTable}
         image={dndTable}
         altDescription="A hardwood table with an inlaid tv and smaller shelf underneath"
+        limitMaskToText={true}/>
+
+      <CardImage
+        overlayText="SLX Transmitter Connector Repair"
+        navigateLocation={navSlugs.slxRepair}
+        image={slxCloseup}
+        altDescription="Closeup of a disassembled Shure SLX transmitter"
         limitMaskToText={true}
       />
 

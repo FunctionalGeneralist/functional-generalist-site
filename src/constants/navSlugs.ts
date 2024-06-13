@@ -14,6 +14,7 @@ function buildSlugs() {
     // Projects.
     simpleDmxController: projects + "/simple-dmx-controller",
     dndTable: projects + "/dnd-table",
+    slxRepair: projects + "/slx-transmitter-connector-repair",
 
     // Articles.
     teachingEffectively: articles + "/teaching-effectively",

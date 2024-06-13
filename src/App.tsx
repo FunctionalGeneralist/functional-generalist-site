@@ -21,6 +21,7 @@ import slugs from "./constants/navSlugs"
 import PageWarnoSeizeDeep from "./content/GamesWarnoSeizeDeep"
 import PageAbout from "./content/PageAbout"
 import { logVisit } from "./helpers/networkH"
+import ProjectSlxTransmitterConnector from "./content/ProjectSlxTransmitterConnector"
 
 export default function App() {
   const [screenIsSmall, setScreenIsSmall] = useAtom(screenIsSmallAtom)
@@ -103,6 +104,7 @@ export default function App() {
             <Route path={slugs.projects} element={<PageProjects />} />
             <Route path={slugs.simpleDmxController} element={<ProjectSimpleDmxController />} />
             <Route path={slugs.dndTable} element={<ProjectDndTable />} />
+            <Route path={slugs.slxRepair} element={<ProjectSlxTransmitterConnector />} />
 
             <Route path={slugs.articles} element={<PageArticles />} />
             <Route path={slugs.teachingEffectively} element={<ArticleTeachingEffectively />} />
