@@ -30,7 +30,7 @@ export const xLargeRowGap = `${(baseSize * scale * rowGapMult) * xLargeMult}px`
 // First two values here not yet implemented into css calculations.
 export const normalContentWidth = 958 // Px size of content on a 1920px screen.
 export const contentWidthPercentageOfHugeWindow = 0.7
-export const smallScreenWidthInt = 520
+export const smallScreenWidthInt = 958
 export const smallScreenWidth = `${smallScreenWidthInt}px`
 
 export const styleRules = {

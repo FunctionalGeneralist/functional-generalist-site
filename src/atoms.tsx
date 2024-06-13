@@ -1,6 +1,9 @@
 import { atom } from "jotai";
 import { ReactElement } from "react";
 
+// Pings info endpoint to log that someone has visited the site, only does it on first visit.
+export const visitLoggedAtom = atom(false)
+
 // Used for mobile resizing.
 export const screenIsSmallAtom = atom(false)
 

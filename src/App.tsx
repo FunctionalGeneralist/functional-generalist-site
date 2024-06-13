@@ -7,7 +7,7 @@ import HomePage from "./content/PageHome"
 import PageNotFound from "./content/PageNotFound"
 import {colGap, smallScreenWidth, styleRules} from "./style/styles"
 import {useAtom, useAtomValue} from "jotai"
-import {screenIsSmallAtom, sidebarIsCollapsedAtom} from "./atoms"
+import {screenIsSmallAtom, sidebarIsCollapsedAtom, visitLoggedAtom} from "./atoms"
 import {useEffect} from "react"
 import PageArticles from "./content/PageArticles"
 import ContainerGrid from "./components/ContainerGrid"
@@ -20,14 +20,22 @@ import ArticleTeachingEffectively from "./content/ArticleTeachingEffectively"
 import slugs from "./constants/navSlugs"
 import PageWarnoSeizeDeep from "./content/GamesWarnoSeizeDeep"
 import PageAbout from "./content/PageAbout"
+import { logVisit } from "./helpers/networkH"
 
 export default function App() {
   const [screenIsSmall, setScreenIsSmall] = useAtom(screenIsSmallAtom)
   const sidebarIsCollapsed = useAtomValue(sidebarIsCollapsedAtom)
+  const visitLogged = useAtomValue(visitLoggedAtom)
 
   const mediaWatcher = window.matchMedia(`(max-width: ${smallScreenWidth})`)
 
-  // One time setup.
+  // Setup for logging that a vistor has visited site.
+  useEffect(() => {
+    if (visitLogged == false)
+      logVisit()
+  }, [])
+
+  // Setup for screen resize watcher.
   useEffect(() => {
     setScreenIsSmall(mediaWatcher.matches)
     mediaWatcher.addEventListener("change", (e: MediaQueryListEvent) => setScreenIsSmall(e.matches))
