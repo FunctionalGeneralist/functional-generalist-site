@@ -1,14 +1,14 @@
-import {Route, Routes} from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import StyleSheetCSS from "./types/Style"
-import {colors, setGridAreas, usedSpacerSizes} from "./style/theme"
+import { colors, setGridAreas, usedSpacerSizes } from "./style/theme"
 import './index.scss'
 import Header from "./components/Header"
 import HomePage from "./content/PageHome"
 import PageNotFound from "./content/PageNotFound"
-import {colGap, smallScreenWidth, styleRules} from "./style/styles"
-import {useAtom, useAtomValue} from "jotai"
-import {screenIsSmallAtom, sidebarIsCollapsedAtom, visitLoggedAtom} from "./atoms"
-import {useEffect} from "react"
+import { colGap, smallScreenWidth, styleRules } from "./style/styles"
+import { useAtom, useAtomValue } from "jotai"
+import { screenIsSmallAtom, sidebarIsCollapsedAtom, visitLoggedAtom } from "./atoms"
+import { useEffect } from "react"
 import PageArticles from "./content/PageArticles"
 import ContainerGrid from "./components/ContainerGrid"
 import ProjectDndTable from "./content/ProjectDndTable"
@@ -31,10 +31,10 @@ export default function App() {
   const mediaWatcher = window.matchMedia(`(max-width: ${smallScreenWidth})`)
 
   // Setup for logging that a vistor has visited site.
-  useEffect(() => {
-    if (visitLogged == false)
-      logVisit()
-  }, [])
+  // useEffect(() => {
+  //   if (visitLogged == false)
+  //     logVisit()
+  // }, [])
 
   // Setup for screen resize watcher.
   useEffect(() => {
@@ -109,7 +109,7 @@ export default function App() {
             <Route path={slugs.articles} element={<PageArticles />} />
             <Route path={slugs.teachingEffectively} element={<ArticleTeachingEffectively />} />
 
-            <Route path={slugs.warnoSeizeDeep} element={<PageWarnoSeizeDeep /> } />
+            <Route path={slugs.warnoSeizeDeep} element={<PageWarnoSeizeDeep />} />
 
             <Route path={slugs.contactAndAbout} element={<PageAbout />} />
 
